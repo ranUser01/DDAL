@@ -15,9 +15,21 @@ class DDAL():
         Albert França Josuá Costa
         Regis Antonio Saraiva Albuquerque
         Eulanda Miranda dos Santos
+        
+    Parameters
+    ----------
+    size_batch
+        Size of instances batch.
+    
+    theta
+        Drift threshold.
+
+    lambida
+        Uncertainty threshold.
+    
     """
     
-    def __init__(self, size_batch, theta: float = 0.95, lambida: float = 0.95):
+    def __init__(self, size_batch, theta: float = 0.005, lambida: float = 0.95):
         self.theta = theta
         self.lambida = lambida
         self.max_density = sys.float_info.min
