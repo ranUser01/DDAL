@@ -42,8 +42,23 @@ class DDAL():
     def compute_current_density(self):
         self.current_density = (float) (self.count_selected_instances/self.size_batch)
         
-            
+    
+    def detection_module(self):
         
+        isDrift = False
+        
+        if self.current_density > self.max_density:
+            self.max_density = self.current_density
+        
+        if self.current_density < self.min_density:
+            self.min_density = self.current_density
+        
+        
+        if (self.max_density-self.min_density) > self.theta:
+            
+            isDrift = True
+        
+        return isDrift
         
  
     
