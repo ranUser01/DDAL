@@ -26,6 +26,20 @@ class DDAL():
 
     lambida
         Uncertainty threshold.
+        
+    Methods
+    ----------
+    fixed_uncertainty
+        TO DO explanation.
+    
+    count_selected_instances
+        TO DO explanation.
+    
+    compute_current_density
+        TO DO explanation.
+    
+    detection_modulo
+        TO DO explanation.
     
     """
     
