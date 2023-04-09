@@ -40,6 +40,10 @@ class DDAL():
     
     detection_modulo
         TO DO explanation.
+        
+    Example
+    ----------
+    >>> TO DO explanation.
     
     """
     
