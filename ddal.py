@@ -47,13 +47,13 @@ class DDAL():
     
     """
     
-    def __init__(self, size_batch, theta: float = 0.005, lambida: float = 0.95):
+    def __init__(self, size_batch: int = 500, theta: float = 0.005, lambida: float = 0.95):
         self.theta = theta
         self.lambida = lambida
         self.max_density = sys.float_info.min
         self.min_density = sys.float_info.max
         self.current_density = 0.0
-        self.count_selected_instances = 0
+        self.amount_selected_instances = 0
         self.size_batch = size_batch
         
     
@@ -64,13 +64,13 @@ class DDAL():
         return selected
         
     def count_selected_instances(self,maximum_posteriori):
-       s = self.fixed_uncertainty(maximum_posteriori)
-       if s:
-           self.count_selected_instances+=1
+        s = self.fixed_uncertainty(maximum_posteriori)
+        if s:
+            self.amount_selected_instances+=1
     
     
     def compute_current_density(self):
-        self.current_density = (float) (self.count_selected_instances/self.size_batch)
+        self.current_density = (float) (self.amount_selected_instances/self.size_batch)
         
     
     def detection_module(self):
@@ -92,10 +92,11 @@ class DDAL():
         
  
     
-    def reset(self, theta: float = 0.95, lambida: float = 0.95):
+    def reset(self, size_batch: int = 500, theta: float = 0.95, lambida: float = 0.95):
         self.theta = theta
         self.lambida = lambida
         self.max_density = sys.float_info.min
         self.min_density = sys.float_info.max
         self.current_density = 0.0
         self.count_selected_instances = 0
+        self.size_batch = size_batch
