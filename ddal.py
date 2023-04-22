@@ -70,6 +70,7 @@ class DDAL():
     
     
     def compute_current_density(self):
+        
         self.current_density = (float) (self.amount_selected_instances/self.size_batch)
         
     
