@@ -148,5 +148,5 @@ class DDAL():
         self.max_density = sys.float_info.min
         self.min_density = sys.float_info.max
         self.current_density = 0.0
-        self.count_selected_instances = 0
+        self.amount_selected_instances = 0
         self.size_batch = size_batch
