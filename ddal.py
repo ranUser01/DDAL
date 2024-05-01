@@ -2,7 +2,7 @@ import sys
 
 
 
-class DDAL():
+class DDAL_detector():
     """
     A Drift Detection Method Based on Active Learning.
     
