@@ -116,7 +116,12 @@ class DDAL_detector():
         s = self.fixed_uncertainty(maximum_posteriori)
         if s:
             self.amount_selected_instances+=1
-    
+            
+    def count_tensor(self,tensor):
+        for val in tensor:
+            s = self.fixed_uncertainty(val)
+            if s:
+                self.amount_selected_instances+=1
     
     def compute_current_density(self):
         
